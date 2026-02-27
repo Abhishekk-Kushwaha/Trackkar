@@ -26,8 +26,11 @@ INITIAL_HABITS.forEach((h, i) => {
   h.days = [...PREFILLED_DATA[i]];
 });
 
+const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
 export default function InteractiveDemo() {
   const [habits, setHabits] = useState(INITIAL_HABITS);
+  const [selectedMonth, setSelectedMonth] = useState('February');
 
   const toggleDay = (habitId: number, dayIndex: number) => {
     setHabits(prev => prev.map(h => {
@@ -81,7 +84,7 @@ export default function InteractiveDemo() {
           <div className="w-64 flex flex-col gap-2">
             <div className="border border-black flex flex-col text-center bg-[#fcf3d9]">
               <div className="text-xl font-bold py-2 border-b border-black">HABIT TRACKER</div>
-              <div className="py-1 font-bold bg-white">-February-</div>
+              <div className="py-1 font-bold bg-white">-{selectedMonth}-</div>
             </div>
             <div className="border border-black flex flex-col text-center bg-white flex-1">
               <div className="py-1 font-bold bg-[#fcf3d9] border-b border-black">CALENDAR SETTINGS</div>
@@ -91,11 +94,15 @@ export default function InteractiveDemo() {
               </div>
               <div className="flex flex-1 items-center">
                 <div className="w-1/2 py-1 font-bold border-r border-black h-full flex items-center justify-center">MONTH</div>
-                <div className="w-1/2 py-1 px-2 h-full flex items-center justify-center">
-                  <div className="bg-gray-200 w-full rounded px-2 py-0.5 text-left flex justify-between items-center">
-                    <span>February</span>
-                    <span className="text-[8px]">▼</span>
-                  </div>
+                <div className="w-1/2 py-1 px-2 h-full flex items-center justify-center relative">
+                  <select 
+                    className="bg-gray-200 w-full rounded px-2 py-0.5 text-left font-bold text-[10px] outline-none cursor-pointer appearance-none"
+                    value={selectedMonth}
+                    onChange={(e) => setSelectedMonth(e.target.value)}
+                  >
+                    {MONTHS.map(m => <option key={m} value={m}>{m}</option>)}
+                  </select>
+                  <span className="text-[8px] absolute right-4 pointer-events-none">▼</span>
                 </div>
               </div>
             </div>
@@ -203,11 +210,16 @@ export default function InteractiveDemo() {
            <div className="w-48 border border-black bg-white flex flex-col">
               <div className="bg-[#fcf3d9] border-b border-black py-2 text-center font-bold">TOP HABITS</div>
               <div className="flex-1 flex flex-col p-2 gap-1 justify-center">
-                <div className="flex text-[10px] font-bold"><span className="w-6">1</span> <span className="text-center flex-1">STUDY</span></div>
-                <div className="flex text-[10px] font-bold"><span className="w-6">2</span> <span className="text-center flex-1">CALL TO PARENTS</span></div>
-                <div className="flex text-[10px] font-bold"><span className="w-6">3</span> <span className="text-center flex-1">TRY TO COOK</span></div>
-                <div className="flex text-[10px] font-bold"><span className="w-6">4</span> <span className="text-center flex-1">REVISION</span></div>
-                <div className="flex text-[10px] font-bold"><span className="w-6">5</span> <span className="text-center flex-1">WASH CLOTHS</span></div>
+                {[...habits]
+                  .map(h => ({ name: h.name, completed: h.days.filter(Boolean).length }))
+                  .sort((a, b) => b.completed - a.completed)
+                  .slice(0, 5)
+                  .map((h, idx) => (
+                    <div key={idx} className="flex text-[10px] font-bold">
+                      <span className="w-6">{idx + 1}</span> 
+                      <span className="text-center flex-1 truncate px-1">{h.name}</span>
+                    </div>
+                  ))}
               </div>
            </div>
         </div>
