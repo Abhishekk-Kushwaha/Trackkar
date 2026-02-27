@@ -3,9 +3,9 @@ import { AreaChart, Area, ResponsiveContainer, PieChart, Pie, Cell, YAxis } from
 
 const INITIAL_HABITS = [
   { id: 1, name: 'GYM', goal: 25, days: Array(28).fill(false) },
-  { id: 2, name: 'WASH CLOTHS', goal: 6, days: Array(28).fill(false) },
+  { id: 2, name: 'PRACTICE CODING', goal: 6, days: Array(28).fill(false) },
   { id: 3, name: 'STUDY', goal: 28, days: Array(28).fill(false) },
-  { id: 4, name: 'CALL TO PARENTS', goal: 28, days: Array(28).fill(false) },
+  { id: 4, name: 'WAKE UP AT 5 A.M', goal: 28, days: Array(28).fill(false) },
   { id: 5, name: 'REVISION', goal: 15, days: Array(28).fill(false) },
   { id: 6, name: 'LEARN NEW SKILL', goal: 20, days: Array(28).fill(false) },
   { id: 7, name: 'EVENING WALK', goal: 23, days: Array(28).fill(false) },

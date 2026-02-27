@@ -143,11 +143,11 @@ export default function App() {
         <h2 className="font-serif text-4xl text-center mb-16">What our users say</h2>
         <div className="marquee-track">
           {[
-            { quote: "As a college student, my routine was very messy. After using this tracker, I finally have a clear view of my study hours.", author: "Prem Patel" },
+            { quote: "As a college student, my routine was very messy. After using this tracker, I finally have a clear view of my study hours.", author: "Raj Patel" },
             { quote: "I love that it's a one-time payment. Most apps charge a monthly fee for simple tracking.", author: "Ananya Iyer" },
-            { quote: "The automated charts are the best part. Seeing my win rate go up every week is the dopamine hit I need.", author: "Rahul Malhotra" },
+            { quote: "The automated charts are the best part. Seeing my win rate go up every week is the dopamine hit I need.", author: "Rahul Singh" },
             { quote: "The system actually works. No friction, no complex apps. Just clear progress.", author: "Vikram S." },
-            { quote: "As a college student, my routine was very messy. After using this tracker, I finally have a clear view of my study hours.", author: "Prem Patel" },
+            { quote: "As a college student, my routine was very messy. After using this tracker, I finally have a clear view of my study hours.", author: "Ram Pandit" },
             { quote: "I love that it's a one-time payment. Most apps charge a monthly fee for simple tracking.", author: "Ananya Iyer" },
           ].map((testimonial, i) => (
             <div key={i} className="bg-white/10 backdrop-blur-md p-8 rounded-[2rem] border border-white/10 mx-4 w-[350px] shrink-0">
