@@ -78,7 +78,7 @@ export default function App() {
             <div className="flex items-center gap-2"><span className="text-yellow-500 text-lg">✔</span> Lifetime access</div>
           </div>
 
-          <a href="https://superprofile.bio/vp/Habittrackker" target="_blank" rel="noopener noreferrer" className="btn-purple px-10 md:px-16 py-6 rounded-full text-xl font-bold text-center w-full md:w-auto">
+          <a href="https://superprofile.bio/vp/Habittrackker" className="btn-purple px-10 md:px-16 py-6 rounded-full text-xl font-bold text-center w-full md:w-auto">
             Download Habit Tracker — ₹36
           </a>
           <p className="mt-4 text-gray-400 text-[10px] font-bold uppercase tracking-widest">Instant download • One-time payment</p>
@@ -206,7 +206,7 @@ export default function App() {
           className="max-w-4xl mx-auto bg-white p-12 md:p-24 rounded-[4rem] shadow-2xl border border-gray-50"
         >
           <h2 className="font-serif text-5xl md:text-7xl mb-12 leading-none">Start your journey <br /> <span className="italic text-gray-300">today.</span></h2>
-          <a href="https://superprofile.bio/vp/Habittrackker" target="_blank" rel="noopener noreferrer" className="btn-purple px-14 py-7 rounded-full text-2xl font-bold inline-block">
+          <a href="https://superprofile.bio/vp/Habittrackker" className="btn-purple px-14 py-7 rounded-full text-2xl font-bold inline-block">
             Get Access for ₹36
           </a>
           <p className="mt-8 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Instant Google Drive Delivery</p>
